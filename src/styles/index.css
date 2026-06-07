@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+
+:root {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: #e2e8f0;
+  background-color: #0b0c10;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+  background: radial-gradient(circle at top right, rgba(139, 92, 246, 0.06), transparent 45%),
+              radial-gradient(circle at bottom left, rgba(6, 182, 212, 0.06), transparent 45%),
+              #0b0c10;
+}
+
+#root {
+  width: 100%;
+}
+
+.mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Premium Card Layout */
+.factory-card {
+  background: rgba(22, 24, 33, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.factory-card-glow {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.15);
+  border-color: rgba(139, 92, 246, 0.3);
+}
+
+/* Custom buttons */
+.btn-factory {
+  background: linear-gradient(135deg, #7c3aed 0%, #06b6d4 100%);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-factory:hover:not(:disabled) {
+  box-shadow: 0 4px 25px rgba(6, 182, 212, 0.5);
+  transform: translateY(-1px);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.9; }
+}
+
+.pulse-led {
+  animation: pulseGlow 1.5s infinite ease-in-out;
+}
